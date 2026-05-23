@@ -187,7 +187,18 @@
     transition: color 0.2s;
   }
   .mobile-menu a:hover { color: var(--accent); }
+  .project-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:top;
+  display:block;
+  transition:transform .5s ease;
+}
 
+.project-card:hover .project-image{
+  transform:scale(1.05);
+}
   /* ── Sections ── */
   section { position: relative; z-index: 2; }
 
@@ -1150,144 +1161,154 @@
 <!-- Projects -->
 <section id="projects">
   <div class="section-inner">
-    <div class="section-label reveal">Selected work</div>
+
+    <div class="section-label reveal">
+      Selected work
+    </div>
+
     <h2 class="section-heading reveal reveal-delay-1">
       Things I've <em>built</em>
     </h2>
 
     <div class="projects-grid">
-      <!-- Featured Project -->
-      <div class="project-card featured reveal reveal-delay-1">
+
+      <!-- SYNAPSE PROJECT -->
+      <div
+        class="project-card featured reveal reveal-delay-1"
+        onclick="window.open('https://synapse-b.vercel.app/','_blank')"
+      >
+
         <div class="project-preview">
-          <div class="project-preview-inner">
-            <div class="mock-browser">
-              <div class="mock-bar">
-                <div class="mock-dot" style="background:#ff5f56"></div>
-                <div class="mock-dot" style="background:#ffbd2e"></div>
-                <div class="mock-dot" style="background:#27c93f"></div>
-                <div class="mock-url">app.yourproject.dev</div>
-              </div>
-              <div class="mock-content">
-                <div class="mock-line mock-accent" style="width:40%; height:10px; border-radius:4px; margin-bottom:4px;"></div>
-                <div class="mock-line" style="width:90%"></div>
-                <div class="mock-line" style="width:75%"></div>
-                <div class="mock-line" style="width:60%"></div>
-                <div style="display:flex; gap:8px; margin-top:8px;">
-                  <div style="flex:1; height:50px; background:rgba(0,245,212,0.08); border:1px solid rgba(0,245,212,0.2); border-radius:4px;"></div>
-                  <div style="flex:1; height:50px; background:rgba(123,97,255,0.08); border:1px solid rgba(123,97,255,0.2); border-radius:4px;"></div>
-                  <div style="flex:1; height:50px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:4px;"></div>
-                </div>
-                <div class="mock-line" style="width:85%"></div>
-                <div class="mock-line" style="width:55%"></div>
-              </div>
-            </div>
-          </div>
+
+          <!-- GitHub Button -->
+          <a
+            href="https://github.com/Aniketsaxena2828/synapse"
+            target="_blank"
+            onclick="event.stopPropagation();"
+            style="
+              position:absolute;
+              top:20px;
+              right:20px;
+              z-index:20;
+              background:rgba(8,8,16,.9);
+              color:white;
+              text-decoration:none;
+              padding:10px 18px;
+              border-radius:8px;
+              font-family:var(--font-mono);
+              font-size:.75rem;
+              border:1px solid rgba(255,255,255,.15);
+              backdrop-filter:blur(10px);
+              transition:.3s;
+            "
+          >
+            GitHub ↗
+          </a>
+
+          <img
+            src="assets/synapse.png"
+            alt="Synapse Dashboard"
+            class="project-image"
+          >
+
           <div class="project-hover-cta">
-            View case study
-            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            Open Live Project
+            <svg
+              width="12"
+              height="12"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </div>
+
         </div>
+
         <div class="project-body">
+
           <div class="project-tags">
             <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag purple">PostgreSQL</span>
             <span class="tag">TypeScript</span>
-          </div>
-          <div class="project-title">Project Alpha — Full-Stack SaaS Dashboard</div>
-          <div class="project-desc">A real-time analytics dashboard for small teams. Built with a focus on performance — sub-100ms data refresh, infinite scroll with virtualization, and a fully accessible UI. Handles 10k+ data points without breaking a sweat.</div>
-          <div class="project-footer">
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                Live demo
-              </a>
-              <a href="#" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text3);">2024</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card reveal reveal-delay-2">
-        <div class="project-preview">
-          <div class="project-preview-inner" style="background: linear-gradient(135deg, #1a1a2e 0%, #0d0d1a 100%);">
-            <div style="text-align:center;">
-              <div style="font-family:var(--font-mono); font-size:2rem; color:var(--accent); font-weight:700; line-height:1;">npm</div>
-              <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text3); margin-top:4px;">install your-package</div>
-              <div style="display:flex; gap:8px; justify-content:center; margin-top:12px; flex-wrap:wrap;">
-                <div style="background:rgba(0,245,212,0.1); border:1px solid rgba(0,245,212,0.2); border-radius:3px; padding:3px 8px; font-family:var(--font-mono); font-size:0.6rem; color:var(--accent);">400+ downloads</div>
-                <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:3px; padding:3px 8px; font-family:var(--font-mono); font-size:0.6rem; color:var(--text3);">MIT license</div>
-              </div>
-            </div>
-          </div>
-          <div class="project-hover-cta">View on npm →</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
-            <span class="tag">NPM Package</span>
-            <span class="tag purple">TypeScript</span>
-          </div>
-          <div class="project-title">react-use-scroll-spy</div>
-          <div class="project-desc">A lightweight React hook for scroll-based section detection. Zero dependencies, fully typed, and optimized with IntersectionObserver. 400+ downloads and growing.</div>
-          <div class="project-footer">
-            <div class="project-links">
-              <a href="#" class="project-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                npm
-              </a>
-              <a href="#" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                GitHub
-              </a>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text3);">2024</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card reveal reveal-delay-3">
-        <div class="project-preview">
-          <div class="project-preview-inner" style="background: linear-gradient(135deg, #0d1a0d 0%, #0a0a0f 100%);">
-            <div style="font-family:var(--font-mono); text-align:left; width:80%;">
-              <div style="color:#5f5f80; font-size:0.65rem; margin-bottom:6px;">// api.js</div>
-              <div style="font-size:0.7rem; color:#a78bfa; margin-bottom:2px;">const <span style="color:#00f5d4">client</span> = <span style="color:#f87171">new</span></div>
-              <div style="font-size:0.7rem; color:#00f5d4; margin-bottom:2px;">&nbsp;&nbsp;APIClient({</div>
-              <div style="font-size:0.7rem; color:#9898b8; margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;base: <span style="color:#fbbf24">"api.dev"</span>,</div>
-              <div style="font-size:0.7rem; color:#9898b8; margin-bottom:6px;">&nbsp;&nbsp;});</div>
-              <div style="font-size:0.7rem; color:#f87171;">await <span style="color:#00f5d4">client</span>.<span style="color:#a78bfa">get</span>(<span style="color:#fbbf24">"/users"</span>);</div>
-            </div>
-          </div>
-          <div class="project-hover-cta">View case study →</div>
-        </div>
-        <div class="project-body">
-          <div class="project-tags">
             <span class="tag">Node.js</span>
-            <span class="tag red">REST API</span>
+            <span class="tag purple">MongoDB</span>
           </div>
-          <div class="project-title">DevHub API</div>
-          <div class="project-desc">A RESTful API boilerplate with JWT auth, rate limiting, request validation, and auto-generated OpenAPI docs. Built to be a solid foundation for any backend project.</div>
+
+          <div class="project-title">
+            Synapse — Productivity & Workspace Platform
+          </div>
+
+          <div class="project-desc">
+            A modern full-stack productivity platform featuring
+            workspaces, project collaboration, Kanban boards,
+            task management, authentication, dashboards,
+            and responsive design. Built using React,
+            TypeScript, Node.js, Express, and MongoDB.
+          </div>
+
           <div class="project-footer">
+
             <div class="project-links">
-              <a href="#" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+
+              <a
+                href="https://synapse-b.vercel.app/"
+                target="_blank"
+                class="project-link"
+                onclick="event.stopPropagation();"
+              >
+                Live Demo
+              </a>
+
+              <a
+                href="https://github.com/Aniketsaxena2828/synapse"
+                target="_blank"
+                class="project-link"
+                onclick="event.stopPropagation();"
+              >
                 GitHub
               </a>
+
             </div>
-            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text3);">2023</span>
+
+            <span
+              style="
+                font-family:var(--font-mono);
+                font-size:.65rem;
+                color:var(--text3);
+              "
+            >
+              2026
+            </span>
+
           </div>
+
         </div>
+
+      </div>
+
+      <!-- More Projects Text -->
+      <div
+        class="reveal reveal-delay-2"
+        style="
+          width:100%;
+          text-align:center;
+          margin-top:10px;
+          font-family:var(--font-mono);
+          font-size:.8rem;
+          letter-spacing:.15em;
+          text-transform:uppercase;
+          color:var(--text3);
+        "
+      >
+        — More projects currently in development —
       </div>
 
     </div>
+
   </div>
 </section>
-
 <!-- Contact -->
 <section id="contact">
   <div class="section-inner">
